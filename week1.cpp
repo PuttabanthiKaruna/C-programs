@@ -48,3 +48,30 @@ return 0;
 // priya
 // enter student 2 marks:
 // 98
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// b. Implement a constructor to initialize objects and a destructor to display a message when an object is deleted
+#include<iostream>
+using namespace std;
+class abc{
+    int a;
+    public:
+    abc()
+    {
+       cout<<"enter a value"<<endl;
+       cin>>a;
+    }
+     ~abc(){
+       cout<<"a value is="<<a;
+    }
+};
+int main()
+{
+abc c1;
+return 0;
+}
+
+// output
+// enter a value
+// 2
+// a value is=2
