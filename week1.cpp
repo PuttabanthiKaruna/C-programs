@@ -137,7 +137,40 @@ int main()
 // enter student marks:
 // 98
     
-    
+    #include<iostream>
+using namespace std;
+class student
+{
+        public:
+    int id;
+    char name[];
+    student()
+    {
+        cout<<"student name"<<endl;
+        cout<<"student ID"<<endl;
+        
+    }
+    void display()
+    {
+         cout<<"student name"<<endl;
+         cin>>name;
+         cout<<"student ID"<<endl;
+         cin>>id;
+    }
+};
+int main(){
+     student s1;
+     int n,i;
+      cout<<"enter n value"<<endl;
+     cin>>n;
+       s1[i].display();
+    // student* student_array=new student[n];
+    s1.display();
+     for(i=1;i<=n;i++)
+        {
+         s1[i].display();
+        }
+}
     
     
     
