@@ -75,3 +75,71 @@ return 0;
 // enter a value
 // 2
 // a value is=2
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //d. Input details of n students and display them
+#include<iostream>
+using namespace std;
+class student{
+    int rn,m,i,n;
+    char name[30];
+    public:
+    student()
+    {  
+        
+        cout<<"enter student details"<<endl;
+        cout<<"->enter student name"<<endl;
+        cout<<"->enter student roll number"<<endl;
+        cout<<"->enter student marks"<<endl;
+        
+        
+    }
+        void studentdetails()
+        {
+        cout<<"n="<<endl;
+        cin>>n;
+        for(i=1;i<=n;i++)
+        {
+        cout<<"enter student details"<<i<<endl;
+        cout<<"enter student name:"<<endl;
+        cin>>name;
+        cout<<"enter student roll no.:"<<endl;
+        cin>>rn;
+        cout<<"enter student marks:"<<endl;
+        cin>>m;
+        }   
+        }
+};
+int main()
+{   
+    student s1;
+    s1.studentdetails();
+    return 0;  
+}
+// OUTPUT
+// enter student details
+// ->enter student name
+// ->enter student roll number
+// ->enter student marks
+// n=
+// 2
+// enter student details1
+// enter student name:
+// kavya
+// enter student roll no.:
+// 1
+// enter student marks:
+// 99
+// enter student details2
+// enter student name:
+// priya
+// enter student roll no.:
+// 2
+// enter student marks:
+// 98
+    
+    
+    
+    
+    
+    
+    
