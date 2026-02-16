@@ -172,7 +172,55 @@ int main(){
         }
 }
     
-    
+//c.dynamically allocate an array of student objects using new
+#include<iostream>
+using namespace std;
+
+class student
+{
+public:
+    int id;
+    char name[50];
+
+    void display()
+    {
+        cout<<"Enter student name: ";
+        cin>>name;
+        cout<<"Enter student ID: ";
+        cin>>id;
+    }
+
+    void show()
+    {
+        cout<<"Student Name: "<<name<<endl;
+        cout<<"Student ID: "<<id<<endl;
+    }
+};
+
+int main()
+{
+    int n;
+    cout<<"Enter number of students: ";
+    cin>>n;
+
+    student* s1 = new student[n];   
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<"\nStudent "<<i+1<<endl;
+        s1[i].display();
+    }
+
+    cout<<"Student Details\n";
+    for(int i=0; i<n; i++)
+    {
+        s1[i].show();
+    }
+
+    delete[] s1;   
+    return 0;
+}
+
     
     
     
