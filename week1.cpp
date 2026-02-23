@@ -221,6 +221,43 @@ int main()
     return 0;
 }
 
-    
-    
-    
+________________________________________________________________________________________________________________________________    
+  2.  
+ // a. Implement two overloaded functions add() that can add:Two integers, Two oating-point numbers
+#include<iostream>
+using namespace std;
+class abcd{
+    public:
+    int sum=0;
+    int add(int a,int b){
+        return a+b;
+    }
+    double add(double x,double y){
+          return x+y;
+
+       }
+};
+int main(){
+    abcd o1;
+    o1.add(2,3);
+    o1.add(2.3,1.5);
+}
+______________________________________________________________________________________________________________________________
+   
+// b. Define a function template swapValues() that swaps two variables of any type.
+#include<iostream>
+using namespace std;
+template<typename T>
+  T SwapValues(T a,T b){
+       a=a+b;
+       b=a-b;
+       a=a-b;
+       cout<<"after swapping "<<a<<b;
+       return 0;
+   } 
+int main(){
+    SwapValues(2,3);
+}
+// output
+// after swapping 32
+
