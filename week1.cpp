@@ -272,4 +272,34 @@ int main(){
     }
 return 0;
 }
-
+_______________________________________________________________________________________________________________________________
+4.// a. Define a Node structure containing data and a next pointer Implement functions to:
+#include<iostream>
+using namespace std;
+struct Node{
+    int data;
+    Node* next;
+};
+void insertAtBeginning(Node*& head, int value) {
+    Node* newNode = new Node;
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+}
+void printList(Node*head){
+    cout<<"linked list"<<" ";
+    while(head!=NULL){
+        cout<<head->data<<"->";
+        head=head->next;
+    }
+    cout<<"NULL"<<endl;
+}
+int main(){
+Node*head=NULL;
+insertAtBeginning(head,50);
+insertAtBeginning(head,40);
+insertAtBeginning(head,30);
+insertAtBeginning(head,20);
+insertAtBeginning(head,10);
+printList(head);
+}
