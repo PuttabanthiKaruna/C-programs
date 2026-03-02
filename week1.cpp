@@ -260,4 +260,16 @@ int main(){
 }
 // output
 // after swapping 32
+____________________________________________________________________________________________________________________________________
+3.// a. Create a vector of integers, insert elements, and display them using an iterator
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    vector<int>numbers={10,20,30,40,50};
+    for(int i=0;i<numbers.size();i++){
+        cout<<numbers[i]<<" ";
+    }
+return 0;
+}
 
