@@ -428,3 +428,131 @@ int main(){
     while(choice!=5);
     return 0;
 }
+----------------------------------------------------------------------------------------------
+    #include<iostream>
+using namespace std;
+#define size 5;
+class deque{
+    private:
+    int dq[size];
+    int front,rear;
+    public:
+    // constructor
+    deque(){
+        front=-1;
+        rear=-1;
+    }
+    // insert at front 
+    void insertFront(int x){
+        if((front==0&&rear==size-1)||front==rear+1){
+            cout<<"queue is full -overflow";
+            return;
+        }
+        else if(front==-1&&rear==-1){
+            front=rear==0;
+        }
+        else if(front==0){
+            front=size-1;
+        }
+        else
+        front--;
+        dq[front]=x;
+    }
+    // insert rear
+    void insertRear(int x){
+        if((front==0&&rear==size-1)||front==rear+1){
+            cout<<"queue is full -overflow";
+            return;
+        }
+        else if(front==-1&&rear==-1){
+            front=rear==0;
+        }
+        else if(rear==size-1){
+            rear=0;
+        }
+        else
+        rear++;
+        dq[rear]=x;
+    }
+    // delete from front
+    int deleteFront(){
+        if(front==-1&&rear==-1){
+            cout<<"queue is empty-underflow";
+            return -1;
+        }
+        int item=dq[front];
+        if(front==rear)
+        front=rear=-1;
+        else if(front==size-1)
+        front=0;
+        else
+        front++;
+        return item;
+    }
+    // delete from rear
+    int deleteRear(){
+         if(front==-1&&rear==-1){
+            cout<<"queue is empty-underflow";
+            return -1;
+        }
+        int item=dq[rear];
+        if(front==rear)
+        front=rear=-1;
+        else if(rear==0)
+        rear=size-1;
+        else
+        rear--;
+        return item;
+    }
+    // getfront
+    int getFront{
+        if(front==-1){
+            cout<<"dequeue is empty";
+            return -1;
+        }
+        return dq[front];
+    }
+    // get rear
+    int getRear(){
+        if(rear==-1){
+            cout<<"dequeue is empty";
+            return -1;
+        }
+        return dq[rear];
+    }
+    // display
+    void display(){
+        if(front==-1){
+            cout<<"deque is empty";
+            return;
+        }
+        cout<<"\n elements in dequeue are:";
+        int i=front;
+        while(i!=rear){
+            cout<<dq[i]<<" ";
+            i=(i+1)%size;
+        }
+        cout<<dq[rear];
+    }
+    
+    };
+    int main(){
+        deque
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
