@@ -303,3 +303,128 @@ insertAtBeginning(head,20);
 insertAtBeginning(head,10);
 printList(head);
 }
+
+
+------------------------------------------------------------------------------------------------------------
+    #include<iostream>
+using namespace std;
+class treeNode{
+    public:
+    int data;
+    treeNode*left;
+    treeNode*right;
+    treeNode(int val){
+        data=val;
+        left=NULL;
+        right=NULL;
+    }
+};
+class binaryTree{
+    private:
+    treeNode*root;
+    // recursive function to insert
+    public:
+    binaryTree(){
+        root=NULL;
+    }
+    treeNode*insertRecursive(treeNode*node,int val){
+        if (node==NULL){
+            return new treeNode(val);
+        }
+        char choice;
+        cout<<"insert "<<val<<" to left or right"<<node->data<<"?""l/r:";
+        cin>>choice;
+        if(choice=='l'||'L'){
+            node->left=insertRecursive(node->left,val);
+        }
+        else{
+            node->right=insertRecursive(node->right,val);
+        }
+        return node;
+    }
+    // insert node
+    void insert(int value){
+        if(root==NULL){
+            root=new treeNode(value);
+            cout<<value<<" inserted as root"<<endl;
+        }
+        else{
+            root=insertRecursive(root,value);
+        }
+    }
+    // inorder traversal
+    void inorder(){
+        cout<<"inorder traversal:";
+        inorderRecursive(root);
+        cout<<endl;
+    }
+    // recursiveinorder
+    void inorderRecursive(treeNode*node){
+        if(node==NULL){
+        return;
+        }
+        inorderRecursive(node->left);
+        cout<<node->data<<" ";
+        inorderRecursive(node->right);
+    }
+    // preorder traversal
+    void preorder(){
+        cout<<"preorder traversal";
+        preorderRecursive(root);
+        cout<<endl;
+    }
+    void preorderRecursive(treeNode*node){
+        if(node==NULL){
+            return;
+        }
+        cout<<node->data<<" ";
+        preorderRecursive(node->left);
+        preorderRecursive(node->right);
+    }
+    // postorder traversal
+    void postorder(){
+        cout<<"post order traversal";
+        postorderRecursive(root);
+        cout<<endl;
+    }
+    void postorderRecursive(treeNode*node){
+        if(node==NULL){
+            return;
+        }
+        postorderRecursive(node->left);
+        postorderRecursive(node->right);
+        cout<<node->data<<" ";
+    }
+};
+int main(){
+    binaryTree tree;
+    int choice,value;
+    do
+    {
+        cout<<"enter choice:";
+        cin>>choice;
+        switch(choice){
+            case 1:
+            cout<<"enter value to insert:";
+            cin>>value;
+            tree.insert(value);
+            break;
+            case 2:
+            tree.inorder();
+            break;
+            case 3:
+            tree.preorder();
+            break;
+            case 4:
+            tree.postorder();
+            break;
+            case 5:
+            cout<<"existing...."<<endl;
+            break;
+            default:
+            cout<<"invalid choice!"<<endl;
+        }
+    }
+    while(choice!=5);
+    return 0;
+}
